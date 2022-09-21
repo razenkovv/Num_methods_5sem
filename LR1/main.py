@@ -6,7 +6,9 @@ import lagrange_polynomial
 import error_compare
 import functions
 
-n = 20
+print("Enter n: ")
+n = int(input())
+#n = 60
 s = 0.0
 e = 10.0
 
