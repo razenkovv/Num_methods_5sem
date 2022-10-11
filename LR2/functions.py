@@ -16,6 +16,6 @@ def f_diff_2(x):
 
 
 def error(x, y):
-    #return np.mean(np.abs(x-y))
-    #return np.median(np.abs(x - y))
+    # return np.mean(np.abs(x-y))
+    # return np.median(np.abs(x - y))
     return np.max(np.abs(x - y))
