@@ -6,11 +6,9 @@ from functions import f
 def rectangle_method(x_node):
     h = x_node[1] - x_node[0]
     y_res = np.zeros(x_node.size)
-    for i in range(0, x_node.size - 1):
-        y_res[i] = f(x_node[i]) * h
-
-    y_res[-1] = f(x_node[-1]) * h
-    return y_res.sum()
+    for i in range(0, x_node.size):
+        y_res[i] = f(x_node[i])
+    return y_res.sum() * h
 
 
 def trapz_method(x_node):

@@ -5,6 +5,10 @@ def f(x):
     return np.tanh(x)
 
 
+def f_diff(x):
+    return 1 / np.power(np.cosh(x), 2)
+
+
 def f_integrate(x):
     return np.log(np.cosh(x))
 
