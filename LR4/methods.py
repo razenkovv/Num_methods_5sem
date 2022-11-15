@@ -41,13 +41,14 @@ def plotting(counter, pause, fig, ax, c, f, diff_f):
 
 
 def anim_func(f, diff_f, s, e, c, eps, pause):
-    counter = 1
     fig, ax = plt.subplots(1, 1, figsize=(8, 8))
     plt.ion()
+    plotting(counter=1, pause=pause, fig=fig, ax=ax, c=c, f=f, diff_f=diff_f)
     c_n = c - f(c)/diff_f(c)
+    counter = 1
     while np.abs(c_n - c) > eps:
-        plotting(counter=counter, pause=pause, fig=fig, ax=ax, c=c, f=f, diff_f=diff_f)
         counter += 1
+        plotting(counter=counter, pause=pause, fig=fig, ax=ax, c=c_n, f=f, diff_f=diff_f)
         c = c_n
         c_n = c_n - f(c_n) / diff_f(c_n)
     plt.ioff()

@@ -15,9 +15,9 @@ df = pd.DataFrame(index=precisions, columns=keys)
 
 for precision in precisions:
     df.loc[precision] = methods.bisection(functions.f, s, e, precision) + \
-                        methods.newton(functions.f, functions.diff_f, s, e, (s+e)/3, precision)
+                        methods.newton(functions.f, functions.diff_f, s, e, (s+e)/2, precision)
 
 print(tabulate(df, headers='keys', tablefmt='github', floatfmt=['.0e', '.15f', '.f', '.15f', '.f']))
 
 
-#methods.anim_func(functions.f, functions.diff_f, s, e, (s+e)/2, 1e-3, pause=1)
+methods.anim_func(functions.f, functions.diff_f, s, e, (s+e)/2, 1e-3, pause=1)
